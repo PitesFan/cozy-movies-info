@@ -1,6 +1,38 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #260808;
+  display: flex;
+  flex-direction: column;
+  row-gap: 90px;
+}
+
+.section-grid {
+  max-width: 1192px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 32px;
+  margin-inline: auto;
+}
+
+#header {
+  margin-top: 40px;
+}
+
+.header-content {
+  grid-column: 1/13;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 32px;
+  color: #ededed;
 }
 body {
   background-color: #260808;
