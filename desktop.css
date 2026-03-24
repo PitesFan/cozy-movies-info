@@ -34,3 +34,17 @@ body {
   font-size: 32px;
   color: #ededed;
 }
+body {
+  background-color: #260808;
+}
+.footer {
+    justify-content: center;
+    height: 0px;
+    color: #ededed;;
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    bottom: 0;
+    width: 100%;}
