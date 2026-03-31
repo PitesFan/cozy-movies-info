@@ -79,3 +79,22 @@ body {
   border-radius: 12px;
   grid-column: span 4;
 }
+
+.hero-content {
+  background-image: url("images/bg.jpg");
+  background-size: cover;
+  grid-column: 1/13;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+  height: 650px;
+  margin-top: -50px;
+}
+
+.hero-content h1 {
+  text-align: center;
+  width: 80%;
+}

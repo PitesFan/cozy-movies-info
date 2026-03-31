@@ -5,6 +5,13 @@
   border-radius: 16px;
 }
 
+.primary-button {
+  background-color: #f5d9c8;
+  border: none;
+  padding: 16px 20px;
+  border-radius: 16px;
+}
+
 @font-face {
   font-family: "Instrument Sans";
   src: url(fonts/InstrumentSans-VariableFont_wdth\,wght.ttf);
