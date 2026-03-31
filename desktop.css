@@ -70,8 +70,14 @@ body {
   width: 80%;
   
 }
-.why {
+.why-section {
   margin-top: 60px;
+  align-items: center;
+   display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 32px;
+  color: #ededed;
 }
 
 .why-content {
@@ -89,5 +95,5 @@ body {
   color: #260808;
   padding: 20px;
   border-radius: 12px;
-  
+  grid-column: span 4;
 }
