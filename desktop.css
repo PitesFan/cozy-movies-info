@@ -40,7 +40,7 @@ body {
 .footer {
     justify-content: center;
     height: 0px;
-    color: #ededed;;
+    color: #ededed;
     text-align: center;
     padding: 15px 0;
     position: fixed;
@@ -48,3 +48,25 @@ body {
     align-items: center;
     bottom: 0;
     width: 100%;}
+
+.about-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  justify-content: center;
+  grid-column: 1/13;
+}
+
+.about-content h2 {
+  color: #ededed;
+  
+}
+
+.about-content p {
+  color: #d6d6d6;
+  text-align: center;
+  width: 80%;
+  
+}
