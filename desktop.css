@@ -70,3 +70,30 @@ body {
   width: 80%;
   
 }
+.why-section {
+  margin-top: 60px;
+  align-items: center;
+   display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 32px;
+  color: #ededed;
+}
+
+.why-content {
+  grid-column: 1 / 13;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  text-align: center;
+  color: #ededed;
+}
+
+
+.card {
+  background-color: #e8cfc0;
+  color: #260808;
+  padding: 20px;
+  border-radius: 12px;
+  grid-column: span 4;
+}
