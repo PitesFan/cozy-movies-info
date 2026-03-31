@@ -34,20 +34,19 @@ body {
   font-size: 32px;
   color: #ededed;
 }
+
 body {
   background-color: #260808;
 }
+
 .footer {
-    justify-content: center;
-    height: 0px;
-    color: #ededed;
-    text-align: center;
-    padding: 15px 0;
-    position: fixed;
-    display: flex;
-    align-items: center;
-    bottom: 0;
-    width: 100%;}
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 40px;
+}
 
 .about-content {
   align-items: center;
@@ -59,41 +58,24 @@ body {
   grid-column: 1/13;
 }
 
-.about-content h2 {
-  color: #ededed;
-  
-}
-
 .about-content p {
-  color: #d6d6d6;
   text-align: center;
   width: 80%;
-  
 }
+
 .why-section {
-  margin-top: 60px;
   align-items: center;
-   display: flex;
+  display: flex;
   justify-content: center;
   flex-direction: column;
   gap: 32px;
-  color: #ededed;
 }
-
-.why-content {
-  grid-column: 1 / 13;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  text-align: center;
-  color: #ededed;
-}
-
 
 .card {
-  background-color: #e8cfc0;
-  color: #260808;
-  padding: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   border-radius: 12px;
   grid-column: span 4;
 }
