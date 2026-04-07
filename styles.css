@@ -82,3 +82,9 @@ button {
 .beige-bg {
   background-color: #f5d9c8;
 }
+input::placeholder {
+  color: #f5d9c8;
+}
+input:focus{
+  color: #f5d9c8;
+}
