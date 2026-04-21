@@ -11,7 +11,7 @@
   <body>
     <section id="header" class="section-grid">
       <div class="header-content">
-        <p class="logo light">Cozy movies info</p>
+        <a href="index.html"> <p class="logo light">Cozy movies info</p></a>
         <a href="watchlist.html"
           ><button class="secondary-button beige">View watchlist</button></a
         >
@@ -31,7 +31,7 @@
       </div>
     </section>
 
-    <section class="results">
+    <section id="searched-section" class="results">
       <h2 class="light">You searched</h2>
       <div class="results-content section-grid">
         <img id="result-img" src="" alt="" />
@@ -39,6 +39,7 @@
           <div class="results-texts">
             <h3 id="result-title" class="light">Test Title</h3>
             <p id="result-description" class="light-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer feugiat nunc vitae urna volutpat, non hendrerit velit placerat. Sed dictum risus vel sem aliquam posuere.</p>
+            
           </div>
           <button id="add-to-watchlist-btn" class="primary-button gray">Add to watchlist</button>
       </div>
@@ -50,22 +51,22 @@
       <h2 class="light">Our Recommendations</h2>
       <div class="section-grid">
         <div class="movie-card">
-          <img class="movie-img" src="images/rec1.jpg" alt="Recommendation 1" />
+          <img class="movie-img" src="images/rec1.webp" alt="Recommendation 1" />
         </div>
         <div class="movie-card">
-          <img class="movie-img" src="images/rec2.jpg" alt="Recommendation 2" />
+          <img class="movie-img" src="images/rec2.webp" alt="Recommendation 2" />
         </div>
         <div class="movie-card">
-          <img class="movie-img" src="images/rec3.jpg" alt="Recommendation 3" />
+          <img class="movie-img" src="images/rec3.webp" alt="Recommendation 3" />
         </div>
         <div class="movie-card">
-          <img class="movie-img" src="images/rec4.jpg" alt="Recommendation 4" />
+          <img class="movie-img" src="images/rec4.webp" alt="Recommendation 4" />
         </div>
         <div class="movie-card">
-          <img class="movie-img" src="images/rec5.jpg" alt="Recommendation 5" />
+          <img class="movie-img" src="images/rec5.webp" alt="Recommendation 5" />
         </div>
         <div class="movie-card">
-          <img class="movie-img" src="images/rec6.jpg" alt="Recommendation 6" />
+          <img class="movie-img" src="images/rec6.webp" alt="Recommendation 6" />
         </div>
       </div>
     </section>
@@ -76,6 +77,5 @@
 
     <script src="api.js"></script>
     <script src="watchlist.js"></script>
-    <script src="main.js"></script>
   </body>
 </html>
