@@ -13,6 +13,12 @@ function setupSearchPage() {
   const resultTitle = document.getElementById("result-title");
   const resultDescription = document.getElementById("result-description");
 
+  const resultGenre = document.getElementById("result-genre");
+  const resultRuntime = document.getElementById("result-runtime");
+  const resultLanguage = document.getElementById("result-language");
+  const resultActors = document.getElementById("result-actors");
+  const addToWatchlistButton = document.getElementById("add-to-watchlist-btn");
+
   if (
     !searchInput ||
     !searchButton ||
@@ -28,7 +34,14 @@ function setupSearchPage() {
     return;
   }
 
+  function textOrDash(value) {
+    return value && value !== "N/A" ? value : "-";
+  }
+
+  let lastMovie = null;
+
   addToWatchlistButton.disabled = true;
+
   const searchedSection = document.getElementById("searched-section");
 
   if (searchedSection) {
@@ -78,6 +91,23 @@ function setupSearchPage() {
       return;
     }
 
+    resultTitle.textContent = `${movieData.Title} (${movieData.Year})`;
+    resultDescription.textContent =
+      movieData.Plot && movieData.Plot !== "N/A"
+        ? movieData.Plot
+        : "No description available.";
+    resultGenre.textContent = textOrDash(movieData.Genre);
+    resultRuntime.textContent = textOrDash(movieData.Runtime);
+    resultLanguage.textContent = textOrDash(movieData.Language);
+    resultActors.textContent = textOrDash(movieData.Actors);
+
+    if (movieData.Poster && movieData.Poster !== "N/A") {
+      resultImage.src = movieData.Poster;
+      resultImage.alt = movieData.Title;
+    } else {
+      resultImage.src = "";
+      resultImage.alt = "No poster available";
+    }
     addToWatchlistButton.disabled = false;
     lastMovie = {
       imdbID: movieData.imdbID,
