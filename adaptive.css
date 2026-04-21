@@ -1,0 +1,204 @@
+@media (max-width: 1024px) {
+  body {
+    row-gap: 72px;
+  }
+
+  .section-grid {
+    max-width: calc(100% - 48px);
+    gap: 24px;
+  }
+
+  h1 {
+    font-size: 64px;
+  }
+
+  h2 {
+    font-size: 34px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  .hero-content {
+    height: 560px;
+    margin-top: 0;
+  }
+
+  .card {
+    grid-column: span 6;
+  }
+
+  .movie-card {
+    grid-column: span 6;
+  }
+
+  .movie-img {
+    height: auto;
+  }
+
+  #result-img {
+    grid-column: span 6;
+    height: auto;
+  }
+
+  .results-info {
+    grid-column: span 6;
+  }
+
+  .search {
+    width: min(520px, calc(100% - 48px));
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    row-gap: 56px;
+  }
+
+  #header {
+    margin-top: 24px;
+  }
+
+  .section-grid {
+    max-width: calc(100% - 28px);
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  h1 {
+    font-size: 42px;
+    line-height: 110%;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  p,
+  button {
+    font-size: 16px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .hero-content {
+    height: auto;
+    min-height: 420px;
+    padding: 28px 14px;
+    gap: 24px;
+  }
+
+  .hero-content h1 {
+    width: 100%;
+  }
+
+  .about-content,
+  .about-content p {
+    width: 100%;
+  }
+
+  .why-section {
+    gap: 24px;
+  }
+
+  .card,
+  .movie-card,
+  #result-img,
+  .results-info {
+    grid-column: 1 / -1;
+  }
+
+  .movie-img,
+  #result-img {
+    height: auto;
+  }
+
+  #watchlist {
+    gap: 24px;
+  }
+
+  .watchlist-sort-dropdown {
+    min-width: min(340px, calc(100vw - 32px));
+  }
+
+  .search {
+    width: min(520px, calc(100% - 28px));
+    gap: 24px;
+  }
+
+  .results {
+    gap: 24px;
+  }
+
+  .results-content {
+    padding: 14px;
+  }
+
+  .results-info {
+    gap: 18px;
+  }
+
+  .result-extra {
+    padding: 10px 12px;
+  }
+
+  #add-to-watchlist-btn {
+    width: 100%;
+  }
+
+  .footer {
+    margin-bottom: 24px;
+    padding-inline: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    row-gap: 44px;
+  }
+
+  .logo {
+    font-size: 26px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  .secondary-button,
+  .primary-button,
+  #search,
+  #search-btn,
+  .watchlist-sort {
+    width: 100%;
+  }
+
+  .movie-img,
+  #result-img {
+    height: auto;
+  }
+
+  .watchlist-sort-wrap {
+    width: min(360px, calc(100vw - 32px));
+  }
+
+  .result-extra p {
+    font-size: 15px;
+  }
+}
