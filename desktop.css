@@ -82,7 +82,7 @@ body {
 }
 
 .hero-content {
-  background-image: url("images/bg.jpg");
+  background-image: url("images/bg.webp");
   background-size: cover;
   grid-column: 1/13;
   width: 100%;
@@ -106,6 +106,90 @@ body {
   justify-content: center;
   flex-direction: column;
   gap: 36px;
+}
+
+.watchlist-sort-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.watchlist-sort-dropdown {
+  position: relative;
+  min-width: 260px;
+}
+
+.watchlist-sort {
+  background-color: #4a2b2b;
+  border: 1px solid #f5d9c8;
+  border-radius: 16px;
+  color: #f5d9c8;
+  padding: 12px 16px;
+  font-family: "Instrument Sans";
+  font-size: 16px;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.watchlist-sort:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(245, 217, 200, 0.25);
+}
+
+.watchlist-sort::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #f5d9c8;
+  border-bottom: 2px solid #f5d9c8;
+  transform: rotate(45deg);
+  margin-left: 12px;
+  margin-bottom: 2px;
+}
+
+.watchlist-sort-menu {
+  display: none;
+  list-style: none;
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 0;
+  width: 100%;
+  background-color: #4a2b2b;
+  border: 1px solid #f5d9c8;
+  border-top: none;
+  border-radius: 0 0 16px 16px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.watchlist-sort-option {
+  width: 100%;
+  border: none;
+  background-color: #4a2b2b;
+  color: #f5d9c8;
+  text-align: left;
+  padding: 12px 16px;
+  font-family: "Instrument Sans";
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.watchlist-sort-option:hover,
+.watchlist-sort-option:focus {
+  outline: none;
+  background-color: #603636;
+}
+
+.watchlist-sort-dropdown.is-open .watchlist-sort {
+  border-radius: 16px 16px 0 0;
+}
+
+.watchlist-sort-dropdown.is-open .watchlist-sort-menu {
+  display: block;
 }
 
 .movie-card {
@@ -133,6 +217,11 @@ body {
   gap: 32px;
 }
 
+.search h2 {
+  width: 100%;
+  text-align: center;
+}
+
 .search-content {
   width: 100%;
   display: flex;
@@ -152,31 +241,12 @@ body {
   align-items: center;
 }
 
-.results-content {
-  width: 100%;
-  align-items: center;
+#searched-section {
+  display: none;
 }
 
-#result-img {
-  width: 100%;
-  border-radius: 12px;
-  height: 400px;
-  grid-column: span 4;
-}
-
-.results-info {
-  width: 100%;
-  height: 100%;
-  grid-column: span 8;
+#searched-section.is-visible {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.results-texts {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
 }
 
 #add-to-watchlist-btn {
