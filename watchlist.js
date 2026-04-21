@@ -1,3 +1,4 @@
+
 const WATCHLIST_STORAGE_KEY = "cozy_movies_watchlist";
 
 function getWatchlist() {
@@ -44,6 +45,16 @@ function removeMovieFromWatchlist(imdbID) {
   return updatedMovies;
 }
 
+function getStartYear(yearText) {
+  const match = String(yearText || "").match(/\d{4}/);
+  return match ? Number(match[0]) : 0;
+}
+
+function getYearSortOrder() {
+  const sortSelect = document.getElementById("watchlist-sort-year");
+  return sortSelect ? sortSelect.value : "desc";
+}
+
 function renderWatchlist() {
   const watchlistSection = document.querySelector("#watchlist .section-grid");
 
@@ -59,6 +70,30 @@ function renderWatchlist() {
     return;
   }
 
+  const sortOrder = getYearSortOrder();
+  const sortedMovies = [...movies].sort((a, b) => {
+    const yearA = getStartYear(a.year);
+    const yearB = getStartYear(b.year);
+
+    if (sortOrder === "asc") {
+      return yearA - yearB;
+    }
+
+    return yearB - yearA;
+  });
+
+  watchlistSection.innerHTML = sortedMovies
+    .map(
+      (movie) => `
+      <div class="movie-card" data-imdb-id="${movie.imdbID}">
+        <img class="movie-img" src="${movie.poster}" alt="${movie.title}" />
+        <h3 class="movie-title light-gray">${movie.title} (${movie.year})</h3>
+        <button class="secondary-button beige remove-watchlist-btn" data-imdb-id="${movie.imdbID}">Remove</button>
+      </div>
+    `,
+    )
+    .join("");
+
   const removeButtons = watchlistSection.querySelectorAll(
     ".remove-watchlist-btn",
   );
@@ -71,7 +106,31 @@ function renderWatchlist() {
   });
 }
 
+function setupWatchlistYearSort() {
+  const sortSelect = document.getElementById("watchlist-sort-year");
+  const sortDropdown = document.getElementById("watchlist-sort-dropdown");
+  const sortTrigger = document.getElementById("watchlist-sort-trigger");
+  const sortLabel = document.getElementById("watchlist-sort-label");
+  const sortOptions = document.querySelectorAll(".watchlist-sort-option");
+
+  if (!sortSelect || !sortDropdown || !sortTrigger || !sortLabel) {
+    return;
+  }
+
+  sortOptions.forEach((optionButton) => {
+    optionButton.addEventListener("click", () => {
+      const selectedValue = optionButton.dataset.value;
+      const selectedLabel = optionButton.textContent.trim();
+
+      sortSelect.value = selectedValue;
+      sortLabel.textContent = selectedLabel;
+      syncSortUi();
+      closeDropdown();
+      renderWatchlist();
+    });
+  });
+
 document.addEventListener("DOMContentLoaded", () => {
   setupWatchlistYearSort();
   renderWatchlist();
-});
+});}

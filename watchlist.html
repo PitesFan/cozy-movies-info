@@ -11,7 +11,7 @@
   <body>
     <section id="header" class="section-grid">
       <div class="header-content">
-        <p class="logo light">Cozy movies info</p>
+        <a href="index.html"> <p class="logo light">Cozy movies info</p></a>
         <a href="search.html"
           ><button class="secondary-button beige">Find more movies</button></a
         >
@@ -20,12 +20,48 @@
 
     <section id="watchlist">
       <h2 class="light">Your watchlist</h2>
-      <div class="section-grid">
-        <div class="movie-card">
-          <img class="movie-img" src="" alt="movie img" />
-          <h3 class="movie-title light-gray">Test</h3>
+      <div class="watchlist-sort-wrap">
+        <label for="watchlist-sort-trigger" class="light-gray"
+          ><h3>Sort by year</h3></label
+        >
+        <input type="hidden" id="watchlist-sort-year" value="desc" />
+        <div id="watchlist-sort-dropdown" class="watchlist-sort-dropdown">
+          <button
+            id="watchlist-sort-trigger"
+            class="watchlist-sort"
+            type="button"
+            aria-haspopup="listbox"
+            aria-expanded="false"
+          >
+            <span id="watchlist-sort-label">Newest first</span>
+          </button>
+          <ul
+            class="watchlist-sort-menu"
+            role="listbox"
+            aria-label="Sort by year"
+          >
+            <li>
+              <button
+                class="watchlist-sort-option"
+                type="button"
+                data-value="desc"
+              >
+                Newest first
+              </button>
+            </li>
+            <li>
+              <button
+                class="watchlist-sort-option"
+                type="button"
+                data-value="asc"
+              >
+                Oldest first
+              </button>
+            </li>
+          </ul>
         </div>
       </div>
+      <div class="section-grid"></div>
     </section>
 
     <section class="footer">
@@ -34,6 +70,5 @@
 
     <script src="api.js"></script>
     <script src="watchlist.js"></script>
-    <script src="main.js"></script>
   </body>
 </html>
