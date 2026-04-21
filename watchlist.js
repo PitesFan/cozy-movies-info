@@ -1,4 +1,3 @@
-
 const WATCHLIST_STORAGE_KEY = "cozy_movies_watchlist";
 
 function getWatchlist() {
@@ -117,6 +116,34 @@ function setupWatchlistYearSort() {
     return;
   }
 
+  function syncSortUi() {
+    const selectedValue = sortSelect.value;
+
+    sortOptions.forEach((optionButton) => {
+      const isSelected = optionButton.dataset.value === selectedValue;
+      const optionItem = optionButton.parentElement;
+
+      if (optionItem) {
+        optionItem.hidden = isSelected;
+      }
+
+      if (isSelected) {
+        sortLabel.textContent = optionButton.textContent.trim();
+      }
+    });
+  }
+
+  function closeDropdown() {
+    sortDropdown.classList.remove("is-open");
+    sortTrigger.setAttribute("aria-expanded", "false");
+  }
+
+  sortTrigger.addEventListener("click", () => {
+    syncSortUi();
+    const isOpen = sortDropdown.classList.toggle("is-open");
+    sortTrigger.setAttribute("aria-expanded", String(isOpen));
+  });
+
   sortOptions.forEach((optionButton) => {
     optionButton.addEventListener("click", () => {
       const selectedValue = optionButton.dataset.value;
@@ -130,7 +157,25 @@ function setupWatchlistYearSort() {
     });
   });
 
+  document.addEventListener("click", (event) => {
+    if (!sortDropdown.contains(event.target)) {
+      closeDropdown();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeDropdown();
+    }
+  });
+
+  syncSortUi();
+}
+
+window.getWatchlist = getWatchlist;
+window.addMovieToWatchlist = addMovieToWatchlist;
+
 document.addEventListener("DOMContentLoaded", () => {
   setupWatchlistYearSort();
   renderWatchlist();
-});}
+});
